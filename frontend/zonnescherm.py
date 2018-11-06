@@ -25,16 +25,10 @@ class Zonnescherm:
 
     def send(self, command):
         if self.connection.inWaiting() == 0:
-            print("Command: " + command)
-            line = command + "\r\n"
+            line = command + "\r"
             self.connection.write(line.encode())
 
         response = self.connection.readline()
-        print("Response: " + response.decode('utf-8'))
 
         # Return the response given by Arduino
         return response.decode()
-
-
-zonnescherm = Zonnescherm(port='COM3', name="Test Scherm")
-zonnescherm.send("WHO_ARE_YOU")

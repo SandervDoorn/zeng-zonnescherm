@@ -52,6 +52,3 @@ def check_ports():
                 active_screens.remove(screen)
 
     return active_screens
-
-
-send_command("WHO_ARE_YOU", 'COM3')
