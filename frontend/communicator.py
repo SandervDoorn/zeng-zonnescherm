@@ -54,4 +54,4 @@ def check_ports():
     return active_screens
 
 
-send_command("SET_THOLD_DIST 20", 'COM3')
+send_command("WHO_ARE_YOU", 'COM3')
