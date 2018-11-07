@@ -1,2 +1,5 @@
 # Ignore .idea
 .idea/*
+
+# Ignore .pyc files
+*.pyc
