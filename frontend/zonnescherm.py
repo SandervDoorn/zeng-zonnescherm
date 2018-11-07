@@ -16,16 +16,12 @@ class Zonnescherm:
 
     def set_defaults(self):
         # Default settings
+        print("Initializing settings")
         self.name = self.send("GET_NAME")
         self.mode = self.send("GET_MODE")
         self.state = self.send("GET_STATE")
         self.ths_temp = self.send("GET_THOLD_TEMP")
         self.ths_dist = self.send("GET_THOLD_DIST")
-        print(  "Name: " + self.name + "\r\n"
-                "Mode: " + self.mode + "\r\n"
-                "State: " + self.state + "\r\n"
-                "Ths_temp: " + self.ths_temp + "\r\n"
-                "Ths_dist: " + self.ths_dist + "\r\n")
 
     def get_port(self):
         return self.port
@@ -51,4 +47,25 @@ class Zonnescherm:
 
         # Return the response given by Arduino
         return response.decode()
+
+    def get_temp(self):
+        return self.send("GET_SENSOR_TEMP")
+
+    def get_light(self):
+        return self.send("GET_SENSOR_LIGHT")
+
+    def get_ths_temp(self):
+        return self.ths_temp
+
+    def get_ths_dist(self):
+        return self.ths_dist
+
+    def set_ths_temp(self, value):
+        self.ths_temp = self.send("SET_THOLD_TEMP " + str(value))
+
+    def set_ths_dist(self, value):
+        if isinstance(value, int) and value in range(2, 71):
+            self.ths_dist = self.send("SET_THOLD_DIST" + str(value))
+        else:
+            return "Value is not a valid number"
 
