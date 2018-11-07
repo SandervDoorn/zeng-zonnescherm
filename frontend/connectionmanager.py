@@ -9,6 +9,7 @@ def check_ports():
     comlist = serial.tools.list_ports.comports()    # All connected COM ports
     connected = []                                  # All connected COM ports as Zonnescherm
     zonneschermen = []                              # All connected COM ports as Zonnescherm identified as Groot
+
     for devices in comlist:
 
         # Setup serial connection to device
@@ -16,7 +17,8 @@ def check_ports():
 
         # Add device to zonneschermen if handshake succeeds
         if item.port not in zonneschermen:
-            if item.send("WHO_ARE_YOU") == "I AM GROOT":
+            if item.send("WHO_ARE_YOU") == "I AM GROOT\0":
+                item.set_defaults()
                 zonneschermen.append(item)
 
         # Check if devices have been removed
@@ -29,4 +31,4 @@ def check_ports():
         return zonneschermen
 
 
-print(check_ports())
+check_ports()

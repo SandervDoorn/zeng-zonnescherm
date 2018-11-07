@@ -3,10 +3,29 @@ import time
 
 
 class Zonnescherm:
-    def __init__(self, port, name="Zonnescherm"):
+    def __init__(self, port):
         self.port = port
-        self.name = name
         self.connection = self.start_serial(port)
+
+        # Define settings (set with proper values using set_defaults in connectionmanager.py)
+        self.name = ""
+        self.mode = ""
+        self.state = ""
+        self.ths_temp = 0
+        self.ths_dist = 0
+
+    def set_defaults(self):
+        # Default settings
+        self.name = self.send("GET_NAME")
+        self.mode = self.send("GET_MODE")
+        self.state = self.send("GET_STATE")
+        self.ths_temp = self.send("GET_THOLD_TEMP")
+        self.ths_dist = self.send("GET_THOLD_DIST")
+        print(  "Name: " + self.name + "\r\n"
+                "Mode: " + self.mode + "\r\n"
+                "State: " + self.state + "\r\n"
+                "Ths_temp: " + self.ths_temp + "\r\n"
+                "Ths_dist: " + self.ths_dist + "\r\n")
 
     def get_port(self):
         return self.port
@@ -32,3 +51,4 @@ class Zonnescherm:
 
         # Return the response given by Arduino
         return response.decode()
+
