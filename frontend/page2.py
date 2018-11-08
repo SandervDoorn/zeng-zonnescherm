@@ -3,9 +3,8 @@ from tkinter import *
 
 from matplotlib.dates import minutes
 
-from main import Main
-from settings import Settings
-from shutter import Shutter
+from frontend.main import Main
+from frontend.settings import Settings
 
 from time import *
 from datetime import *

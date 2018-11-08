@@ -43,8 +43,6 @@ class ConnectionManager():
 
         # Check if devices have been removed
         # By comparing active_list to all connected devices
-        print("All connected devices")
-        print(connected)
         for scherm in self.connections:
             if scherm not in connected:
                 self.connections.remove(scherm)

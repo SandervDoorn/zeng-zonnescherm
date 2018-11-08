@@ -16,7 +16,6 @@ class Zonnescherm:
 
     def set_defaults(self):
         # Default settings
-        print("Initializing settings")
         self.name = self.send("GET_NAME")
         self.mode = self.send("GET_MODE")
         self.state = self.send("GET_STATE")
