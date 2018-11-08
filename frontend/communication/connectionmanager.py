@@ -1,4 +1,4 @@
-import frontend.zonnescherm as zonnescherm
+import frontend.application.zonnescherm as zonnescherm
 import serial.tools.list_ports
 import time
 
@@ -57,13 +57,3 @@ class ConnectionManager():
             if device.get_port() == port:
                 return device
         return "Device not found"
-
-
-manager = ConnectionManager()
-
-while True:
-    print("#######################")
-    print("Checking ports...")
-    manager.check_ports()
-    print("#######################\n\n")
-    time.sleep(1)
