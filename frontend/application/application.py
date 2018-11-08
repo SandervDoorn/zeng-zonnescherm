@@ -5,13 +5,21 @@ from frontend.communication.connectionmanager import ConnectionManager
 class Application(tk.Frame):
     def __init__(self, master=None, serial=None):
         super().__init__(master)
+        self.serial = serial
+        self.active_shutters = []
         self.pack()
 
-        serial.check_ports()
+        # Load all shutters that are connected
+        self.update_shutterlist()
 
-        # TODO: Instead of giving object statically, provide Zonnescherm objects dynamically
-        self.shutter = Shutter(serial.get_single_connection('COM3'), self)
-        self.shutter.pack(fill="both")
+        for s in self.active_shutters:
+            self.shutter = Shutter(s, self)
+            self.shutter.pack(fill="both")
+
+    def update_shutterlist(self):
+        self.serial.check_ports()
+        self.active_shutters = self.serial.get_connections()
+        self.after(10000, self.update_shutterlist)
 
 
 class Shutter(tk.Frame):
@@ -21,7 +29,7 @@ class Shutter(tk.Frame):
         self.parent = parent
         self.shutter = shutter
         self.pack_propagate(False)
-        self.config(bg='grey', width=200, height=250)
+        self.config(bg='ghost white', width=200, height=250)
 
         # Create labels containing values to display
         self.temp_value = tk.StringVar()
@@ -33,16 +41,15 @@ class Shutter(tk.Frame):
         self.update_values()
 
     def update_values(self):
-        print("Updating value")
         self.temp_value.set(self.shutter.send("GET_SENSOR_TEMP"))
         self.temp_label.config(text="Temperatuur: " + self.temp_value.get())
-        self.after(1000, self.update_values)
+        self.after(40000, self.update_values)
 
 
 # Setup application window
 root = tk.Tk()
 root.geometry("800x800+0+0")
-root.configure(background="white")
+root.configure(background="white smoke")
 
 # Setup and start application
 com = ConnectionManager()
