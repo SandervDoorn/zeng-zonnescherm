@@ -30,10 +30,26 @@ class Application(tk.Frame):
         self.after(10000, self.update_shutterlist)
 
     def draw_shutters(self):
-        print("Redrawing shutter frames")
         for s in self.new_shutters:
             shutter = Shutter(s, self)
             shutter.pack()
+            shutter.bind('<1>',
+                         lambda event, val=s: self.onclick(val))
+
+    def onclick(self, val):
+        # On click of a shutter
+        Details(val)
+
+
+class Details(tk.Toplevel):
+    def __init__(self, shutter=None):
+        super().__init__()
+
+        # Set size of new window
+        self.config(width=1000, height=1000)
+
+        testLabel = tk.Label(self, text=shutter.get_port())
+        testLabel.pack()
 
 
 class Shutter(tk.Frame):
