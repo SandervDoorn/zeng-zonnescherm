@@ -1,15 +1,35 @@
-import tkinter as tk
+from tkinter import *
 from serial import SerialException as SerialException
 from frontend.communication.connectionmanager import ConnectionManager
 
 
-class Application(tk.Frame):
+class Application(Frame):
     def __init__(self, master=None, serial=None):
         super().__init__(master)
+        self.pack()
+        self.config(bg="ghost white")
+
+        topframe = Frame(self)
+        title = Label(topframe, bg="ghost white", text="Zeng Shutter Control System", height=2)
+        title.config(font=("Calibri", 20))
+        title.pack()
+        topframe.config(bg="ghost white")
+        topframe.pack(fill=X, side="top")
+
+        # Shuttergroup
+        group = ShutterGroup(self, serial)
+        group.config(bd=1, width=800, height=300, bg='gray90')
+        group.pack_propagate(False)
+
+
+class ShutterGroup(Frame):
+    def __init__(self, parent=None, serial=None):
+        super().__init__(parent)
+        self.pack()
         self.serial = serial
+
         self.active_shutters = []
         self.new_shutters = []
-        self.pack()
 
         # Load all shutters that are connected
         self.update_shutterlist()
@@ -30,47 +50,54 @@ class Application(tk.Frame):
         self.after(10000, self.update_shutterlist)
 
     def draw_shutters(self):
+        x = 0  # Column
+        y = 1  # Row
         for s in self.new_shutters:
+            if x == 3:
+                y += 1
+                x = 0
             shutter = Shutter(s, self)
-            shutter.pack()
+            shutter.grid(row=y, column=x, padx=10, pady=5)
             shutter.bind('<1>',
                          lambda event, val=s: self.onclick(val))
+            x += 1
 
     def onclick(self, val):
         # On click of a shutter
         Details(val)
 
 
-class Details(tk.Toplevel):
+class Details(Toplevel):
     def __init__(self, shutter=None):
         super().__init__()
 
-        testLabel = tk.Label(self, text=shutter.get_port())
+        testLabel = Label(self, text=shutter.get_port())
         testLabel.pack()
 
 
-class Shutter(tk.Frame):
+class Shutter(Frame):
     def __init__(self, shutter, parent=None):
         super().__init__(parent)
-        # Define parent frame (Application) and prevent child widgets from adjusting size
+        # Define parent frame (ShutterGroup) and prevent child widgets from adjusting size
         self.parent = parent
         self.shutter = shutter
         self.pack_propagate(False)
-        self.config(bg='ghost white', width=200, height=250)
+        self.config(bg='gray95', width=200, height=250)
 
         # Create values for the display
-        self.temp_value = tk.StringVar()
+        self.temp_value = StringVar()
         self.temp_value.set("None")
-        self.state_value = tk.IntVar()
+        self.state_value = IntVar()
         self.state_value.set(0)
 
-        # Create labels to display the values
-        self.title = tk.Label(self, text=shutter.get_port())
+        self.title = Label(self, text=shutter.get_name())
         self.title.pack()
-        self.temp_label = tk.Label(self, text="Temperatuur: " + self.temp_value.get())
-        self.temp_label.pack()
-        self.state_label = tk.Label(self, text="Status: " + 'Dicht' if self.state_value.get() == 0 else 'Open')
-        self.state_label.pack()
+
+        # Create labels to display the values
+        self.temp_label = Label(self, text="Temperatuur: " + self.temp_value.get())
+        self.temp_label.pack(pady=10)
+        self.state_label = Label(self, text="Status: Dicht" if self.state_value.get() == 0 else "Status: Open")
+        self.state_label.pack(pady=10)
 
         self.update_values()
 
@@ -90,15 +117,15 @@ class Shutter(tk.Frame):
             self.pack_forget()
         if not skipUpdate:
             self.temp_label.config(text="Temperatuur: " + self.temp_value.get())
-            self.state_label.config(text="Status: " + 'Dicht' if self.state_value.get() == 1 else 'Open')
+            self.state_label.config(text="Status: Dicht" if self.state_value.get() == 0 else "Status: Open")
 
             self.after(20000, self.update_values)
 
 
 # Setup application window
-root = tk.Tk()
-root.geometry("800x800+0+0")
-root.configure(background="white smoke")
+root = Tk()
+root.geometry("1280x720+50+50")
+root.configure(background="ghost white")
 
 # Setup and start application
 com = ConnectionManager()
