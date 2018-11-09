@@ -1,14 +1,7 @@
-import time
 from tkinter import *
 
-from matplotlib.dates import minutes
-
-from main import Main
-from settings import Settings
-from shutter import Shutter
-
-from time import *
-from datetime import *
+from frontend.old.main import Main
+from frontend.old.settings import Settings
 
 import matplotlib
 matplotlib.use('TkAgg')
@@ -16,7 +9,6 @@ from matplotlib import pyplot as plt
 from matplotlib.animation import FuncAnimation
 from matplotlib import style
 from matplotlib.backends.backend_tkagg import (FigureCanvasTkAgg)
-from matplotlib.figure import Figure
 
 import warnings
 import matplotlib.cbook

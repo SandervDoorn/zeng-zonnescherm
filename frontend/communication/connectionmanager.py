@@ -1,4 +1,4 @@
-import frontend.zonnescherm as zonnescherm
+import frontend.application.zonnescherm as zonnescherm
 import serial.tools.list_ports
 import time
 
@@ -6,11 +6,14 @@ import time
 class ConnectionManager():
     def __init__(self):
         self.connections = []
+        self.newconnections = []
+        self.updated = False
 
     def check_ports(self):
         """
         Returns a list of COM devices identified as zeng screen
         """
+        print("Checking for new devices")
         comlist = serial.tools.list_ports.comports()    # All connected COM ports
         connected = []                                  # All connected COM ports as Zonnescherm object
 
@@ -24,7 +27,7 @@ class ConnectionManager():
                         flag = True
                         break
                 if flag:
-                    break
+                    continue
 
                 # Setup serial connection to device and add as Zonnescherm object
                 item = zonnescherm.Zonnescherm(devices.device)
@@ -35,6 +38,8 @@ class ConnectionManager():
                     if item.send("WHO_ARE_YOU") == "I AM GROOT\0":
                         item.set_defaults()
                         self.connections.append(item)
+                        self.newconnections.append(item)
+                        self.updated = True
 
             # If serial connection breaks during operations
             except serial.serialutil.SerialException:
@@ -43,27 +48,28 @@ class ConnectionManager():
 
         # Check if devices have been removed
         # By comparing active_list to all connected devices
-        print("All connected devices")
-        print(connected)
         for scherm in self.connections:
             if scherm not in connected:
+                self.updated = True
                 self.connections.remove(scherm)
 
     def get_connections(self):
         return self.connections
+
+    def get_new_connections(self):
+        return self.newconnections
+
+    def reset_new_connections(self):
+        self.newconnections = []
+
+    def hasUpdated(self):
+        return self.updated
+
+    def reset_hasUpdated(self):
+        self.updated = False
 
     def get_single_connection(self, port):
         for device in self.connections:
             if device.get_port() == port:
                 return device
         return "Device not found"
-
-
-manager = ConnectionManager()
-
-while True:
-    print("#######################")
-    print("Checking ports...")
-    manager.check_ports()
-    print("#######################\n\n")
-    time.sleep(1)
