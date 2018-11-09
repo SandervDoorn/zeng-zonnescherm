@@ -45,9 +45,6 @@ class Details(tk.Toplevel):
     def __init__(self, shutter=None):
         super().__init__()
 
-        # Set size of new window
-        self.config(width=1000, height=1000)
-
         testLabel = tk.Label(self, text=shutter.get_port())
         testLabel.pack()
 
@@ -64,32 +61,36 @@ class Shutter(tk.Frame):
         # Create values for the display
         self.temp_value = tk.StringVar()
         self.temp_value.set("None")
-        self.counter = tk.IntVar()
-        self.counter.set(1)
+        self.state_value = tk.IntVar()
+        self.state_value.set(0)
 
         # Create labels to display the values
         self.title = tk.Label(self, text=shutter.get_port())
         self.title.pack()
         self.temp_label = tk.Label(self, text="Temperatuur: " + self.temp_value.get())
         self.temp_label.pack()
-        self.counter_label = tk.Label(self, text="Counter: " + str(self.counter.get()))
-        self.counter_label.pack()
+        self.state_label = tk.Label(self, text="Status: " + 'Dicht' if self.state_value.get() == 0 else 'Open')
+        self.state_label.pack()
 
         self.update_values()
 
     def update_values(self):
+        """
+        Updates values that are displayed in the labels
+        Upon disconnection of shutter, updates are skipped and device is removed from GUI
+        :return:
+        """
         skipUpdate = False
         try:
-            self.temp_value.set(self.shutter.send("GET_SENSOR_TEMP"))
+            self.temp_value.set(self.shutter.get_temp())
+            self.state_value.set(self.shutter.get_state())
         except SerialException:
             skipUpdate = True
             self.parent.forceupdate = True
             self.pack_forget()
         if not skipUpdate:
             self.temp_label.config(text="Temperatuur: " + self.temp_value.get())
-            i = self.counter.get() + 1
-            self.counter.set(i)
-            self.counter_label.config(text="Counter: " + str(self.counter.get()))
+            self.state_label.config(text="Status: " + 'Dicht' if self.state_value.get() == 1 else 'Open')
 
             self.after(20000, self.update_values)
 
