@@ -28,7 +28,7 @@ class Zonnescherm:
     def start_serial(self, port):
         connection = serial.Serial(
             port=port,
-            baudrate=9600,
+            baudrate=19200,
             timeout=2,
         )
 
@@ -40,12 +40,17 @@ class Zonnescherm:
     def send(self, command):
         if self.connection.inWaiting() == 0:
             line = command + "\r"
+            print("Sending command: " + command + " on device: " + self.port)
             self.connection.write(line.encode())
 
         response = self.connection.readline()
 
         # Return the response given by Arduino
+        print("Receiving response: " + response.decode())
         return response.decode()
+
+    def get_name(self):
+        return self.name
 
     def get_temp(self):
         return self.send("GET_SENSOR_TEMP")
