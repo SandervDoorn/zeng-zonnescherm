@@ -1,4 +1,5 @@
 import tkinter as tk
+from serial import SerialException as SerialException
 from frontend.communication.connectionmanager import ConnectionManager
 
 
@@ -12,13 +13,14 @@ class Application(tk.Frame):
         # Load all shutters that are connected
         self.update_shutterlist()
 
-        for s in self.active_shutters:
-            self.shutter = Shutter(s, self)
-            self.shutter.pack(fill="both")
-
     def update_shutterlist(self):
         self.serial.check_ports()
         self.active_shutters = self.serial.get_connections()
+
+        for s in self.active_shutters:
+            shutter = Shutter(s, self)
+            shutter.pack()
+
         self.after(10000, self.update_shutterlist)
 
 
@@ -34,16 +36,30 @@ class Shutter(tk.Frame):
         # Create labels containing values to display
         self.temp_value = tk.StringVar()
         self.temp_value.set("None")
+        self.counter = tk.IntVar()
+        self.counter.set(1)
 
         self.temp_label = tk.Label(self, text="Temperatuur: " + self.temp_value.get())
         self.temp_label.pack()
+        self.counter_label = tk.Label(self, text="Counter: " + str(self.counter.get()))
+        self.counter_label.pack()
 
         self.update_values()
 
     def update_values(self):
-        self.temp_value.set(self.shutter.send("GET_SENSOR_TEMP"))
-        self.temp_label.config(text="Temperatuur: " + self.temp_value.get())
-        self.after(40000, self.update_values)
+        skipUpdate = False
+        try:
+            self.temp_value.set(self.shutter.send("GET_SENSOR_TEMP"))
+        except SerialException:
+            skipUpdate = True
+            self.pack_forget()
+        if not skipUpdate:
+            self.temp_label.config(text="Temperatuur: " + self.temp_value.get())
+            i = self.counter.get() + 1
+            self.counter.set(i)
+            self.counter_label.config(text="Counter: " + str(self.counter.get()))
+
+            self.after(1000, self.update_values)
 
 
 # Setup application window

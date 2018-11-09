@@ -14,13 +14,17 @@
 #include <string.h>
 #include <avr/io.h>
 
+//**************************
 //Temp placeholder functions
+//TODO: Replace this with setter/getter library (eeprom.c?)
+//Dont forget to remove the functions in .h file as well
 volatile char name[20] = "Sander";
 volatile char ths_temp[3] = "20";
 volatile char ths_dist[3] = "30";
 volatile char screen_state[7] = "CLOSED";
+volatile char mode[7] = "MANUAL";
 
-char* get_name() 
+char* get_name()
 {
 	return name;
 }
@@ -43,7 +47,7 @@ char* get_screen_state()
 
 char* get_screen_mode()
 {
-	return "MANUAL";
+	return mode;
 }
 
 char* get_thold_temp()
@@ -64,30 +68,30 @@ void set_thold_temp(char* val)
 
 char* get_thold_dist()
 {
-	return "030";
+	return ths_dist;
 }
 
 char* get_sens_temp()
 {
-	return "018";
+	return "18";
 }
 
 char* get_sens_light()
 {
 	return "007";
 }
+//********************
+//End of placeholder list
 
 void read_command()
 {
-	
-	char response[30];
-	char inputbuffer[50];
 	char commando[30];
 	char arg[20];
+	char inputbuffer[30];
 
 	//Reading command
 	read_ser(inputbuffer, sizeof(inputbuffer));
-	
+
 	int i = 0;
 	while (inputbuffer[i] != ' ' && inputbuffer[i] != '\0')
 	{
@@ -95,22 +99,21 @@ void read_command()
 		i++;
 	}
 	commando[i] = '\0';
-	
+
 	i++; //Spatie skippen
 	int j = 0;
-	
+
 	while (inputbuffer[i] != ' ' && inputbuffer[i] != '\0')
 	{
 		arg[j] = inputbuffer[i];
 		i++;
 		j++;
 	}
-	
+
 	arg[j] = '\0';
-	
-	
+
 	//Handshake to verify we are indeed Groot
-	if (strcmp(commando, "WHO_ARE_YOU")==0)
+	if (strcmp(commando, "WHO_ARE_YOU") == 0)
 	{
 		write_ser("I AM GROOT");
 	}

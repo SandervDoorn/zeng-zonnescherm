@@ -1,4 +1,4 @@
-from frontend.main import Main
+from frontend.old.main import Main
 from tkinter import *
 
 

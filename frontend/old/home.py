@@ -1,7 +1,7 @@
 from tkinter import *
-from frontend.main import Main
-from frontend.page2 import Page2
-from frontend.shutter import Shutter
+from frontend.old.main import Main
+from frontend.old.page2 import Page2
+from frontend.old.shutter import Shutter
 
 
 class Home(Main):
