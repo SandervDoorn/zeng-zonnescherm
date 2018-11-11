@@ -60,6 +60,10 @@ class Zonnescherm:
     def get_name(self):
         return self.name
 
+    def set_name(self, value):
+        response = self.send("SET_NAME " + str(value))
+        self.name = self.parse(response)
+
     def get_state(self):
         val = self.send("GET_STATE")
         return self.parse(val)[0]
@@ -75,15 +79,13 @@ class Zonnescherm:
     def get_ths_temp(self):
         return self.ths_temp
 
+    def set_ths_temp(self, value):
+        response = self.send("SET_THS_TEMP " + value)
+        self.ths_temp = self.parse(response)
+
     def get_ths_dist(self):
         return self.ths_dist
 
-    def set_ths_temp(self, value):
-        self.ths_temp = self.send("SET_THOLD_TEMP " + str(value))
-
     def set_ths_dist(self, value):
-        if isinstance(value, int) and value in range(2, 71):
-            self.ths_dist = self.send("SET_THOLD_DIST" + str(value))
-        else:
-            return "Value is not a valid number"
-
+        response = self.send("SET_THS_DIST " + value)
+        self.ths_dist = self.parse(response)

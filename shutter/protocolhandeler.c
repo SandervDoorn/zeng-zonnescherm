@@ -291,7 +291,7 @@ void read_command()
 		{
 			uint8_t val = atoi(arg);
 			set_ths_temp(val);
-			sprintf(response, "OK");
+			sprintf(response, "OK %i", get_ths_temp());
 			write_ser(response);
 		}
 		else
@@ -307,7 +307,7 @@ void read_command()
 		{
 			uint8_t val = atoi(arg);
 			set_ths_dist(val);
-			sprintf(response, "OK");
+			sprintf(response, "OK %i", get_ths_dist());
 			write_ser(response);
 		}
 		else

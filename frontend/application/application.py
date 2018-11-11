@@ -1,11 +1,7 @@
 from tkinter import *
 from serial import SerialException as SerialException
 from frontend.communication.connectionmanager import ConnectionManager
-import matplotlib
-matplotlib.use('TkAgg')
-from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
-from matplotlib.figure import Figure
-from datetime import datetime
+from frontend.application.details import Details
 
 
 class Application(Frame):
@@ -72,68 +68,6 @@ class ShutterGroup(Frame):
     def onclick(self, val):
         # On click of a shutter
         Details(val)
-
-
-class Details(Toplevel):
-    def __init__(self, shutter=None):
-        super().__init__()
-        self.title("Shutter: " + shutter.get_name())
-        self.config(bg="ghost white")
-
-        testLabel = Label(self, text=shutter.get_name(), font=("Calibri", 20), bg="ghost white")
-        testLabel.pack()
-        graph = Graph(self, shutter)
-        graph.pack()
-
-
-class Graph(Frame):
-    """
-    Graph class that creates a linegraph and updates every 40 seconds
-    Source: https://pythonprogramming.net/how-to-embed-matplotlib-graph-tkinter-gui/
-    """
-    def __init__(self, parent=None, shutter=None):
-        super().__init__(parent)
-        self.config(bg="ghost white")
-        self.shutter = shutter
-
-        f = Figure(figsize=(6, 6), dpi=100)
-        self.ax = f.add_subplot(111)
-
-        # Sets for the plot
-        self.timeset = []
-        self.valueset = []
-
-        self.ax.clear()
-        self.ax.set_ylabel("Temperatuur in °C")
-        self.ax.plot(self.timeset, self.valueset)
-
-        # The graph magic
-        self.canvas = FigureCanvasTkAgg(f, self)
-        self.canvas.draw()
-        self.canvas.get_tk_widget().pack(side="bottom", fill="both", expand=True)
-
-        # Start 40 second update loop
-        self.update_graph()
-
-    def update_graph(self):
-        # Append new value to plots
-        self.timeset.append(datetime.now().strftime('%H:%M:%S'))
-        self.valueset.append(self.shutter.get_temp())
-
-        # If there is more than 5 time entries, remove the oldest value
-        if len(self.timeset) > 5:
-            self.timeset.remove(self.timeset[0])
-            self.valueset.remove(self.valueset[0])
-
-        # Redraw the graph
-        self.ax.clear()
-        self.ax.set_ylabel("Temperatuur in °C")
-        self.ax.set_xticklabels(self.timeset, rotation='45')
-        self.ax.plot(self.timeset, self.valueset)
-
-        self.canvas.draw_idle()
-
-        self.after(40000, self.update_graph)
 
 
 class Shutter(Frame):
