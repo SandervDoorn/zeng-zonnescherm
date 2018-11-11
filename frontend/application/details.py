@@ -39,7 +39,7 @@ class Graph(Frame):
         self.config(bg="ghost white")
         self.shutter = shutter
 
-        f = Figure(figsize=(6, 6), dpi=100)
+        f = Figure(figsize=(6, 6), dpi=100, facecolor='#f8f8ff')
         self.ax = f.add_subplot(111)
 
         # Sets for the plot
@@ -70,6 +70,7 @@ class Graph(Frame):
 
         # Redraw the graph
         self.ax.clear()
+        self.ax.set_title("Temperatuur over de tijd")
         self.ax.set_ylabel("Temperatuur in °C")
         self.ax.set_xticklabels(self.timeset, rotation='45')
         self.ax.plot(self.timeset, self.valueset)

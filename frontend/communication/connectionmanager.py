@@ -1,9 +1,8 @@
 import frontend.application.zonnescherm as zonnescherm
 import serial.tools.list_ports
-import time
 
 
-class ConnectionManager():
+class ConnectionManager:
     def __init__(self):
         self.connections = []
         self.newconnections = []
@@ -43,7 +42,6 @@ class ConnectionManager():
 
             # If serial connection breaks during operations
             except serial.serialutil.SerialException:
-                # TODO: Handle error properly
                 print("Lost connection to device")
 
         # Check if devices have been removed
