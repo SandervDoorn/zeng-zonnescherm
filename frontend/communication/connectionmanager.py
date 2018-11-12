@@ -34,7 +34,7 @@ class ConnectionManager:
 
                 # Add device to connections if handshake succeeds
                 if item not in self.connections:
-                    if item.send("WHO_ARE_YOU") == "I AM GROOT\0":
+                    if item.send("WHO_ARE_YOU") == "I AM GROOT\n":
                         item.set_defaults()
                         self.connections.append(item)
                         self.newconnections.append(item)
