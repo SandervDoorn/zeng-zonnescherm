@@ -38,8 +38,8 @@ void write_ser(char *data) {
 		//Transmit character and go to next (i++)
 		transmit_data(data[i++]);
 	}
-	//transmit endmark character
-	transmit_data('\0');
+	//transmit newline character so readline() stops reading
+	transmit_data('\n');
 }
 
 uint8_t receive_data() {
