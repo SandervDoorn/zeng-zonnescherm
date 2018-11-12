@@ -76,16 +76,23 @@ class Shutter(Frame):
         # Define parent frame (ShutterGroup) and prevent child widgets from adjusting size
         self.parent = parent
         self.shutter = shutter
+        self.update_flag = 0  # Used to delay update cycles for temperature etc.
+
+        # Prevent child components from changing size
         self.pack_propagate(False)
         self.config(bg='gray95', width=200, height=250)
 
-        # Create values for the display
+        # Create values for the display, proper values are added in first update_values
+        self.v_name = StringVar()
+        self.v_name.set("None")
         self.v_temp = StringVar()
         self.v_temp.set("None")
         self.v_state = IntVar()
         self.v_state.set(0)
+        self.v_mode = IntVar()
+        self.v_mode.set(0)
 
-        self.title = Label(self, text=shutter.get_name())
+        self.title = Label(self, textvariable=self.v_name, font=('Calibri', 14))
         self.title.pack()
 
         # Create labels to display the values
@@ -93,8 +100,12 @@ class Shutter(Frame):
         self.l_temp.pack(pady=10)
         self.l_state = Label(self, text="Status: Dicht" if self.v_state.get() == 0 else "Status: Open")
         self.l_state.pack(pady=10)
+        self.l_mode = Label(self, text="Modus: Handmatig" if self.v_mode.get() == 0 else "Modus: Automatisch")
+        self.l_mode.pack(pady=10)
 
-        self.b_state = Button(self, text="Open" if self.v_state.get() == 0 else "Sluiten")
+        self.b_mode = Button(self, text="Automatisch" if self.v_mode.get() == 0 else "Handmatig", command=self.update_mode)
+        self.b_mode.pack(side="bottom", fill='x', padx=5, pady=5)
+        self.b_state = Button(self, text="Openen" if self.v_state.get() == 0 else "Sluiten", command=self.update_state)
         self.b_state.pack(side="bottom", fill='x', padx=5, pady=5)
 
         self.update_values()
@@ -106,18 +117,70 @@ class Shutter(Frame):
         :return:
         """
         skipUpdate = False
+        # Update Nametag every 5 seconds
         try:
-            self.v_temp.set(self.shutter.get_temp())
-            self.v_state.set(self.shutter.get_state())
+            self.v_name.set(self.shutter.get_name())
         except SerialException:
             skipUpdate = True
-            self.parent.forceupdate = True
             self.pack_forget()
-        if not skipUpdate:
-            self.l_temp.config(text="Temperatuur: " + self.v_temp.get() + "°C")
-            self.l_state.config(text="Status: Dicht" if self.v_state.get() == 0 else "Status: Open")
 
-            self.after(40000, self.update_values)
+        # Update Temperature, State and Mode every 5*i (40) seconds
+        if self.update_flag == 0:
+            try:
+                self.v_temp.set(self.shutter.get_temp())
+                self.v_state.set(self.shutter.get_state())
+                self.v_mode.set(self.shutter.get_mode())
+            except SerialException:
+                skipUpdate = True
+                self.pack_forget()
+            if not skipUpdate:
+                self.l_temp.config(text="Temperatuur: " + self.v_temp.get() + "°C")
+                self.l_state.config(text="Status: Dicht" if self.v_state.get() == 0 else "Status: Open")
+                self.l_mode.config(text="Modus: Handmatig" if self.v_mode.get() == 0 else "Modus: Automatisch")
+
+        # Increment update flag
+        self.update_flag += 1
+        if self.update_flag == 8:
+            self.update_flag = 0
+
+        self.after(5000, self.update_values)
+
+    def update_state(self):
+        """
+        Sends a command to change the screen state
+        Updates state label and button content
+        Sets screen mode to manual to prevent man vs machine conflict
+        :return:
+        """
+        if self.v_state.get() == 1:
+            self.shutter.set_state("CLOSED")
+            self.v_state.set(0)
+            self.l_state.config(text="Status: Dicht")
+            self.b_state.config(text="Openen")
+
+        elif self.v_state.get() == 0:
+            self.shutter.set_state("OPEN")
+            self.v_state.set(1)
+            self.l_state.config(text="Status: Open")
+            self.b_state.config(text="Sluiten")
+
+    def update_mode(self):
+        """
+        Sends a command to change the screen mode
+        Updates mode label and button content
+        :return:
+        """
+        if self.v_mode.get() == 1:
+            self.shutter.set_mode("MANUAL")
+            self.v_mode.set(0)
+            self.l_mode.config(text="Modus: Handmatig")
+            self.b_mode.config(text="Automatisch")
+
+        elif self.v_mode.get() == 0:
+            self.shutter.set_mode("AUTO")
+            self.v_mode.set(1)
+            self.l_mode.config(text="Modus: Automatisch")
+            self.b_mode.config(text="Handmatig")
 
 
 # Setup application window

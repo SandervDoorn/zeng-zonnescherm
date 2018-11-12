@@ -9,8 +9,8 @@ class Zonnescherm:
 
         # Define settings (set with proper values using set_defaults in connectionmanager.py)
         self.name = ""
-        self.mode = ""
-        self.state = ""
+        self.mode = 0
+        self.state = 0
         self.ths_temp = 0
         self.ths_dist = 0
 
@@ -47,15 +47,20 @@ class Zonnescherm:
         response = self.connection.readline()
 
         # Return the response given by Arduino
-        print("Receiving response: " + response.decode())
-        return response.decode()
+        try:
+            decoded = response.decode()
+        except UnicodeDecodeError:
+            print("UnicodeDecodeError found")
+            decoded = ""
+        print("Receiving response: " + decoded)
+        return decoded
 
     def parse(self, response):
         res = response.split(" ")
         if res[0] == "OK":
             return res[1]
         if res[0] == "ERROR":
-            raise ValueError(res[1])
+            raise ValueError(res)
 
     def get_name(self):
         return self.name
@@ -64,17 +69,29 @@ class Zonnescherm:
         response = self.send("SET_NAME " + str(value))
         self.name = self.parse(response)
 
+    def get_mode(self):
+        return self.mode
+
+    def set_mode(self, value):
+        self.send("SET_MODE " + str(value))
+        response = self.send("GET_MODE")
+        self.mode = self.parse(response)[0]
+
     def get_state(self):
-        val = self.send("GET_STATE")
-        return self.parse(val)[0]
+        return self.state
+
+    def set_state(self, value):
+        self.send("SET_STATE " + str(value))
+        response = self.send("GET_STATE")
+        self.state = self.parse(response)[0]
 
     def get_temp(self):
-        val = self.send("GET_SENSOR_TEMP")
-        return self.parse(val)
+        response = self.send("GET_SENSOR_TEMP")
+        return self.parse(response)
 
     def get_light(self):
-        val = self.send("GET_SENSOR_LIGHT")
-        return self.parse(val)
+        response = self.send("GET_SENSOR_LIGHT")
+        return self.parse(response)
 
     def get_ths_temp(self):
         return self.ths_temp
