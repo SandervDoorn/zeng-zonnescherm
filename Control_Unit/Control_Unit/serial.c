@@ -5,8 +5,7 @@
  *  Author: Sander-Laptop
  */ 
 
-#define UBBRVAL = 103 //16.000.000(clockspeed)/16/9600(wanted baudrate)-1
-#include <avr/io.h>
+#include "serial.h"
 
 void init_serial() {
 	//Setting baudrate
@@ -39,7 +38,7 @@ void write_ser(char *data) {
 		transmit_data(data[i++]);
 	}
 	//transmit endmark character
-	transmit_data('\0');
+	transmit_data('\n');
 }
 
 uint8_t receive_data() {

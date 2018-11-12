@@ -10,97 +10,88 @@
 
 
 #include "serial.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <limits.h>
-#include <inttypes.h>
-#include <string.h>
-#include <avr/io.h>
+#include "protocolhandeler.h"
 
-#define MANUAL 0
-#define AUTO 1
-
-#define CLOSED 0
-#define OPEN 1
-
-//Temp placeholder functions
-char name[20] = "Sander";
-uint8_t ths_temp = 20;
-uint8_t ths_dist = 20;
-uint8_t state = CLOSED;
-uint8_t mode = MANUAL;
-
-char* get_name()
+/*Setters*/
+void set_shutter_mode(uint8_t shutter_mode)
 {
-	return name;
+	eeprom_update_byte((uint8_t*)shutter_mode_adr, shutter_mode);
 }
 
-void set_name(char* val)
+void set_shutter_state(uint8_t shutter_state)
 {
-	int i = 0;
-	while (val[i] != '\0')
+	eeprom_update_byte((uint8_t*)shutter_state_adr, shutter_state);
+}
+
+void set_ths_temp(int16_t ths_temp)
+{
+	eeprom_update_byte((int16_t*)ths_temp_adr, ths_temp);
+}
+
+void set_ths_light(uint8_t ths_light)
+{
+	eeprom_update_byte((uint8_t*)ths_light_adr, ths_light);
+}
+
+void set_ths_dist(uint8_t ths_dist)
+{
+	eeprom_update_byte((uint8_t*)ths_dist_adr, ths_dist);
+}
+
+set_arduino_name(char* str)
+{
+	uint8_t i = 0;
+	while(strlen(str)>i)
 	{
-		name[i] = val[i];
+		eeprom_update_byte((char*)name_start_adr+i, str[i]);
 		i++;
 	}
-	name[i] = '\0';
+	eeprom_update_byte((char*)name_start_adr+i, '\0');
 }
 
-uint8_t get_screen_state()
+/*Getters*/
+uint8_t get_shutter_mode()
 {
-	return state;
+	return eeprom_read_byte((uint8_t*)shutter_mode_adr);
 }
 
-void set_state(val)
+uint8_t get_shutter_state()
 {
-	state = val;
+	return eeprom_read_byte((uint8_t*)shutter_state_adr);
 }
 
-int get_screen_mode()
+int16_t get_ths_temp()
 {
-	return mode;
+	return eeprom_read_byte((uint16_t*)ths_temp_adr);
 }
 
-void set_mode(val)
+uint8_t get_ths_light()
 {
-	mode = val;
-}
-
-uint8_t get_ths_temp()
-{
-	return ths_temp;
-}
-
-void set_ths_temp(uint8_t val)
-{
-	ths_temp = val;
+	return eeprom_read_byte((uint8_t*)ths_light_adr);
 }
 
 uint8_t get_ths_dist()
 {
-	return ths_dist;
+	return eeprom_read_byte((uint8_t*)ths_dist_adr);
 }
 
-void set_ths_dist(uint8_t val)
+char* get_arduino_name()
 {
-	ths_dist = val;
-}
-
-uint8_t get_sens_temp()
-{
-	return 50;
-}
-
-char* get_sens_light()
-{
-	return "007";
+	uint8_t i = 0;
+	uint8_t str[20];
+	do
+	{
+		str[i] = eeprom_read_byte((char*)name_start_adr+i);
+		i++;
+	}while(str[i-1] != '\0');
+	return str;
 }
 
 int open_screen()
 {
-	if (state != OPEN)
+	if (get_shutter_state() != OPEN)
 	{
-		set_state(1);
+		set_shutter_state(1);
 		return 1;
 	}
 	return 0;
@@ -108,15 +99,13 @@ int open_screen()
 
 int close_screen()
 {
-	if (state != CLOSED)
+	if (get_shutter_state() != CLOSED)
 	{
-		set_state(0);
+		set_shutter_state(0);
 		return 1;
 	}
 	return 0;
 }
-
-//End of placeholders
 
 //Source: https://stackoverflow.com/questions/14422775/how-to-check-a-given-string-contains-only-number-or-not-in-c
 int numbers_only(const char *s)
@@ -167,16 +156,16 @@ void read_command()
 	//Provide controller with all default settings
 	if (strcmp(commando, "GET_SETTINGS")==0)
 	{
-		sprintf(response, "%s %i %i %i %i", get_name(), get_screen_mode(), get_screen_state(), get_ths_temp(), get_ths_dist());
+		sprintf(response, "%s %i %i %i %i", get_arduino_name(), get_shutter_mode(), get_shutter_state(), get_ths_temp(), get_ths_dist());
 		write_ser(response);
 	}
 
 	//If tree to handle all GETTERS
-	if (strcmp(commando, "GET_NAME") == 0)
+	if (strcmp(commando, "get_adruino_name") == 0)
 	{
-		if (name!=NULL)
+		if (get_arduino_name() !=NULL)
 		{
-			sprintf(response, "OK %s", get_name());
+			sprintf(response, "OK %s", get_arduino_name());
 			write_ser(response);
 		}
 		else
@@ -187,35 +176,35 @@ void read_command()
 
 	if (strcmp(commando, "GET_STATE") == 0)
 	{
-		if (state == OPEN || state == CLOSED)
+		if (get_shutter_state() == OPEN || get_shutter_state == CLOSED)
 		{
-			sprintf(response, "OK %i", get_screen_state());
+			sprintf(response, "OK %i", get_shutter_state());
 			write_ser(response);
 		}
 		else
 		{
-			sprintf(response, "ERROR 601: Unrecognized screenstate %i", get_screen_state());
+			sprintf(response, "ERROR 601: Unrecognized screenstate %i", get_shutter_state());
 			write_ser(response);
 		}
 	}
 
 	if (strcmp(commando, "GET_MODE") == 0)
 	{
-		if (get_screen_mode()==MANUAL || get_screen_state() == AUTO)
+		if (get_shutter_mode()==MANUAL || get_shutter_mode() == AUTO)
 		{
-			sprintf(response, "OK %i", get_screen_mode());
+			sprintf(response, "OK %i", get_shutter_mode());
 			write_ser(response);
 		}
 		else
 		{
-			sprintf(response, "ERROR 601: Unrecognized mode %i", get_screen_mode());
+			sprintf(response, "ERROR 601: Unrecognized mode %i", get_shutter_mode());
 			write_ser(response);
 		}
 	}
 
 	if (strcmp(commando, "GET_THS_TEMP") == 0)
 	{
-		if (ths_temp!=NULL)
+		if (get_ths_temp()!=NULL)
 		{
 			sprintf(response, "OK %i", get_ths_temp());
 			write_ser(response);
@@ -229,7 +218,7 @@ void read_command()
 
 	if (strcmp(commando, "GET_THS_DIST") == 0)
 	{
-		if (ths_dist!=NULL)
+		if (get_ths_dist()!=NULL)
 		{
 			sprintf(response, "OK %i", get_ths_dist());
 			write_ser(response);
@@ -243,28 +232,28 @@ void read_command()
 
 	if (strcmp(commando, "GET_SENSOR_TEMP") == 0)
 	{
-		if (get_sens_temp()!=NULL && get_sens_temp() <= 50)
+		if (read_sensor_temp()!=NULL && read_sensor_temp() <= 50)
 		{
-			sprintf(response, "OK %i", get_sens_temp());
+			sprintf(response, "OK %i", read_sensor_temp());
 			write_ser(response);
 		}
 		else
 		{
-			sprintf(response, "ERROR 442: Unrealistic value %i. Sensor might be defect", get_sens_temp());
+			sprintf(response, "ERROR 442: Unrealistic value %i. Sensor might be defect", read_sensor_temp());
 			write_ser(response);
 		}
 	}
 
 	if (strcmp(commando, "GET_SENSOR_LIGHT") == 0)
 	{
-		if (get_sens_light()!=NULL && get_sens_light() <= 255)
+		if (read_sensor_light()!=NULL && read_sensor_light() <= 255)
 		{
-			sprintf(response, "OK %i", get_sens_light());
+			sprintf(response, "OK %i", read_sensor_light());
 			write_ser(response);
 		}
 		else
 		{
-			sprintf(response, "ERROR 443: Unrealistic value %i. Sensor might be defect", get_sens_light());
+			sprintf(response, "ERROR 443: Unrealistic value %i. Sensor might be defect", read_sensor_light());
 			write_ser(response);
 		}
 	}
@@ -274,8 +263,8 @@ void read_command()
 	{
 		if (strlen(arg) > 0 && strlen(arg) <= 20)
 		{
-			set_name(arg);
-			sprintf(response, "OK %s", get_name());
+			set_arduino_name(arg);
+			sprintf(response, "OK %s", get_arduino_name());
 			write_ser(response);
 		}
 		else
@@ -321,7 +310,7 @@ void read_command()
 	{
 		if (strcmp(arg, "OPEN") == 0)
 		{
-			if (state!=OPEN && open_screen() == 1)
+			if (get_shutter_state()!=OPEN && open_screen() == 1)
 			{
 				sprintf(response, "OK OPENING");
 				write_ser(response);
@@ -335,7 +324,7 @@ void read_command()
 
 		if (strcmp(arg, "CLOSED") == 0)
 		{
-			if (state!=CLOSED && close_screen() == 1)
+			if (get_shutter_state()!=CLOSED && close_screen() == 1)
 			{
 				sprintf(response, "OK CLOSING");
 				write_ser(response);
@@ -352,9 +341,9 @@ void read_command()
 	{
 		if (strcmp(arg, "MANUAL") == 0)
 		{
-			if (mode!=MANUAL)
+			if (get_shutter_mode()!=MANUAL)
 			{
-				set_mode(MANUAL);
+				set_shutter_mode(MANUAL);
 				sprintf(response, "OK MODE MANUAL");
 				write_ser(response);
 			}
@@ -367,9 +356,9 @@ void read_command()
 
 		if (strcmp(arg, "AUTO") == 0)
 		{
-			if (mode!=AUTO)
+			if (get_shutter_mode()!=AUTO)
 			{
-				set_mode(AUTO);
+				set_shutter_mode(AUTO);
 				sprintf(response, "OK MODE AUTO");
 				write_ser(response);
 			}
@@ -380,13 +369,4 @@ void read_command()
 			}
 		}
 	}
-}
-
-int main(void)
-{
-	init_serial();
-	while(1)
-	{
-		read_command();
-	}	
 }
