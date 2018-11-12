@@ -38,11 +38,22 @@ void write_ser(char *data) {
 		transmit_data(data[i++]);
 	}
 	//transmit endmark character
-	transmit_data('\n');
+	transmit_data('\0');
 }
 
 uint8_t receive_data() {
 	//Wacht tot er data is
+// 	int i = 0;
+// 	
+// 	while (!(UCSR0A & (1<<RXC0)) && i < 160000)
+// 	{
+// 		i++;
+// 	}
+// 	
+// 	if (i==160000)
+// 	{
+// 		return '\r';
+// 	}
 	loop_until_bit_is_set(UCSR0A, RXC0);
 	return UDR0;
 }

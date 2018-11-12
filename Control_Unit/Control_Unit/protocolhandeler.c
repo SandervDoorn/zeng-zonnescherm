@@ -126,7 +126,12 @@ void read_command()
 
 	//Reading command
 	read_ser(inputbuffer, sizeof(inputbuffer));
-
+	
+	if (inputbuffer[0] == '\0')
+	{
+		return;
+	}
+	
 	int i = 0;
 	while (inputbuffer[i] != ' ' && inputbuffer[i] != '\0')
 	{
@@ -368,5 +373,6 @@ void read_command()
 				write_ser(response);
 			}
 		}
+		inputbuffer[0] = '\0';
 	}
 }

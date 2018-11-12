@@ -9,7 +9,10 @@ serial.d serial.o: .././serial.c .././serial.h \
  d:\ict\programma\visual\ studio\atmel\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr/4.6.2/../../../../avr/include/avr/common.h \
  d:\ict\programma\visual\ studio\atmel\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr/4.6.2/../../../../avr/include/avr/version.h \
  d:\ict\programma\visual\ studio\atmel\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr/4.6.2/../../../../avr/include/avr/fuse.h \
- d:\ict\programma\visual\ studio\atmel\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr/4.6.2/../../../../avr/include/avr/lock.h
+ d:\ict\programma\visual\ studio\atmel\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr/4.6.2/../../../../avr/include/avr/lock.h \
+ d:\ict\programma\visual\ studio\atmel\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr/4.6.2/../../../../avr/include/stdio.h \
+ d:\ict\programma\visual\ studio\atmel\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr/4.6.2/include/stdarg.h \
+ d:\ict\programma\visual\ studio\atmel\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr/4.6.2/include/stddef.h
 
 .././serial.h:
 
@@ -34,3 +37,9 @@ d:\ict\programma\visual\ studio\atmel\extensions\atmel\avrgcc\3.4.1.95\avrtoolch
 d:\ict\programma\visual\ studio\atmel\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr/4.6.2/../../../../avr/include/avr/fuse.h:
 
 d:\ict\programma\visual\ studio\atmel\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr/4.6.2/../../../../avr/include/avr/lock.h:
+
+d:\ict\programma\visual\ studio\atmel\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr/4.6.2/../../../../avr/include/stdio.h:
+
+d:\ict\programma\visual\ studio\atmel\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr/4.6.2/include/stdarg.h:
+
+d:\ict\programma\visual\ studio\atmel\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr/4.6.2/include/stddef.h:

@@ -201,7 +201,7 @@ LOAD d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrto
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000     0x19de
+.text           0x00000000     0x19bc
  *(.vectors)
  .vectors       0x00000000       0x68 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5/crtm328p.o
                 0x00000000                __vector_default
@@ -282,10 +282,10 @@ LOAD d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrto
                 0x000000a2                __vector_16
                 0x000000a2                __vector_18
                 0x000000a2                __vector_20
- .text          0x000000a6       0x28 Control_Unit.o
+ .text          0x000000a6       0x24 Control_Unit.o
                 0x000000a6                main
- .text          0x000000ce       0xc8 Distancesensor.o
-                0x000000ce                init_ports
+ .text          0x000000ca       0xcc Distancesensor.o
+                0x000000ca                init_ports
                 0x000000d4                init_timer
                 0x000000e0                stop_timer
                 0x000000ee                init_ext_int
@@ -294,180 +294,179 @@ LOAD d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrto
                 0x00000118                init_dist
                 0x00000124                read_sensor_dist
                 0x0000013a                __vector_2
- .text          0x00000196      0x154 Leds.o
+ .text          0x00000196      0x136 Leds.o
                 0x00000196                init_shutter
-                0x000001c4                moving
-                0x000001e4                auto_regulator
-                0x0000029a                manual_regulator
-                0x000002ac                init_leds
- .text          0x000002ea       0x2e Lightsensor.o
-                0x000002ea                init_adc_light
-                0x000002f8                get_adc_value_light
-                0x0000030e                read_sensor_light
- .text          0x00000318      0xbbe protocolhandeler.o
-                0x00000318                get_shutter_state
-                0x00000322                set_shutter_mode
-                0x0000032e                set_shutter_state
-                0x0000033a                set_ths_temp
-                0x00000346                set_ths_light
-                0x00000352                set_ths_dist
-                0x0000035e                set_arduino_name
-                0x000003a6                get_shutter_mode
-                0x000003b0                get_ths_temp
-                0x000003bc                get_ths_light
-                0x000003c6                get_ths_dist
-                0x000003d0                get_arduino_name
-                0x00000430                open_screen
-                0x0000044a                close_screen
-                0x00000464                numbers_only
-                0x00000486                read_command
- .text          0x00000ed6       0xb0 serial.o
-                0x00000ed6                init_serial
-                0x00000ef2                transmit_data
-                0x00000f02                write_ser
-                0x00000f26                receive_data
-                0x00000f36                read_ser
- .text          0x00000f86       0xa6 Temperaturesensor.o
-                0x00000f86                init_adc_temp
-                0x00000f94                get_adc_value_temp
-                0x00000faa                read_sensor_temp
- .text          0x0000102c        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libm.a(addsf3.o)
- .text          0x0000102c        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libm.a(addsf3x.o)
- .text          0x0000102c        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libm.a(fixsfsi.o)
- .text          0x0000102c        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libm.a(fixunssfsi.o)
- .text          0x0000102c        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libm.a(floatsisf.o)
- .text          0x0000102c        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libm.a(fp_inf.o)
- .text          0x0000102c        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libm.a(fp_nan.o)
- .text          0x0000102c        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libm.a(fp_pscA.o)
- .text          0x0000102c        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libm.a(fp_pscB.o)
- .text          0x0000102c        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libm.a(fp_round.o)
- .text          0x0000102c        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libm.a(fp_split3.o)
- .text          0x0000102c        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libm.a(fp_zero.o)
- .text          0x0000102c        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libm.a(mulsf3.o)
- .text          0x0000102c        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libm.a(mulsf3x.o)
- .text          0x0000102c        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_udivmodhi4.o)
- .text          0x0000102c        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_exit.o)
- .text          0x0000102c        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_copy_data.o)
- .text          0x0000102c        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_clear_bss.o)
- .text          0x0000102c        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(atoi.o)
- .text          0x0000102c        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(strcmp.o)
- .text          0x0000102c        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(mul10.o)
- .text          0x0000102c        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(printf.o)
- .text          0x0000102c        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(putchar.o)
- .text          0x0000102c        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(sprintf.o)
- .text          0x0000102c        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(vfprintf_std.o)
- .text          0x0000102c        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(eerd_byte_atmega328p.o)
- .text          0x0000102c        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(eeupd_byte_atmega328p.o)
- .text          0x0000102c        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(strnlen_P.o)
- .text          0x0000102c        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(strnlen.o)
- .text          0x0000102c        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(fputc.o)
- .text          0x0000102c        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(iob.o)
- .text          0x0000102c        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(ultoa_invert.o)
- .text          0x0000102c        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_prologue.o)
- .text          0x0000102c        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_epilogue.o)
-                0x0000102c                . = ALIGN (0x2)
+                0x000001c0                moving
+                0x000001e0                auto_regulator
+                0x0000028e                init_leds
+ .text          0x000002cc       0x2e Lightsensor.o
+                0x000002cc                init_adc_light
+                0x000002da                get_adc_value_light
+                0x000002f0                read_sensor_light
+ .text          0x000002fa      0xbba protocolhandeler.o
+                0x000002fa                get_shutter_state
+                0x00000304                set_shutter_mode
+                0x00000310                set_shutter_state
+                0x0000031c                set_ths_temp
+                0x00000328                set_ths_light
+                0x00000334                set_ths_dist
+                0x00000340                set_arduino_name
+                0x00000388                get_shutter_mode
+                0x00000392                get_ths_temp
+                0x0000039e                get_ths_light
+                0x000003a8                get_ths_dist
+                0x000003b2                get_arduino_name
+                0x00000412                open_screen
+                0x0000042c                close_screen
+                0x00000446                numbers_only
+                0x00000468                read_command
+ .text          0x00000eb4       0xb0 serial.o
+                0x00000eb4                init_serial
+                0x00000ed0                transmit_data
+                0x00000ee0                write_ser
+                0x00000f04                receive_data
+                0x00000f14                read_ser
+ .text          0x00000f64       0xa6 Temperaturesensor.o
+                0x00000f64                init_adc_temp
+                0x00000f72                get_adc_value_temp
+                0x00000f88                read_sensor_temp
+ .text          0x0000100a        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libm.a(addsf3.o)
+ .text          0x0000100a        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libm.a(addsf3x.o)
+ .text          0x0000100a        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libm.a(fixsfsi.o)
+ .text          0x0000100a        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libm.a(fixunssfsi.o)
+ .text          0x0000100a        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libm.a(floatsisf.o)
+ .text          0x0000100a        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libm.a(fp_inf.o)
+ .text          0x0000100a        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libm.a(fp_nan.o)
+ .text          0x0000100a        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libm.a(fp_pscA.o)
+ .text          0x0000100a        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libm.a(fp_pscB.o)
+ .text          0x0000100a        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libm.a(fp_round.o)
+ .text          0x0000100a        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libm.a(fp_split3.o)
+ .text          0x0000100a        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libm.a(fp_zero.o)
+ .text          0x0000100a        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libm.a(mulsf3.o)
+ .text          0x0000100a        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libm.a(mulsf3x.o)
+ .text          0x0000100a        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_udivmodhi4.o)
+ .text          0x0000100a        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_exit.o)
+ .text          0x0000100a        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_copy_data.o)
+ .text          0x0000100a        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_clear_bss.o)
+ .text          0x0000100a        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(atoi.o)
+ .text          0x0000100a        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(strcmp.o)
+ .text          0x0000100a        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(mul10.o)
+ .text          0x0000100a        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(printf.o)
+ .text          0x0000100a        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(putchar.o)
+ .text          0x0000100a        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(sprintf.o)
+ .text          0x0000100a        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(vfprintf_std.o)
+ .text          0x0000100a        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(eerd_byte_atmega328p.o)
+ .text          0x0000100a        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(eeupd_byte_atmega328p.o)
+ .text          0x0000100a        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(strnlen_P.o)
+ .text          0x0000100a        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(strnlen.o)
+ .text          0x0000100a        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(fputc.o)
+ .text          0x0000100a        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(iob.o)
+ .text          0x0000100a        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(ultoa_invert.o)
+ .text          0x0000100a        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_prologue.o)
+ .text          0x0000100a        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_epilogue.o)
+                0x0000100a                . = ALIGN (0x2)
  *(.text.*)
  .text.avr-libc.fplib
-                0x0000102c        0xa d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libm.a(addsf3.o)
-                0x0000102c                __subsf3
-                0x0000102e                __addsf3
+                0x0000100a        0xa d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libm.a(addsf3.o)
+                0x0000100a                __subsf3
+                0x0000100c                __addsf3
  .text.avr-libc.fplib
-                0x00001036       0xc0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libm.a(addsf3x.o)
-                0x00001050                __addsf3x
+                0x00001014       0xc0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libm.a(addsf3x.o)
+                0x0000102e                __addsf3x
  .text.avr-libc.fplib
-                0x000010f6        0xa d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libm.a(fixsfsi.o)
-                0x000010f6                __fixsfsi
+                0x000010d4        0xa d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libm.a(fixsfsi.o)
+                0x000010d4                __fixsfsi
  .text.avr-libc.fplib
-                0x00001100       0x58 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libm.a(fixunssfsi.o)
-                0x00001100                __fixunssfsi
+                0x000010de       0x58 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libm.a(fixunssfsi.o)
+                0x000010de                __fixunssfsi
  .text.avr-libc.fplib
-                0x00001158       0x7a d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libm.a(floatsisf.o)
-                0x00001158                __floatunsisf
-                0x0000115c                __floatsisf
+                0x00001136       0x7a d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libm.a(floatsisf.o)
+                0x00001136                __floatunsisf
+                0x0000113a                __floatsisf
  .text.avr-libc.fplib
-                0x000011d2        0xc d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libm.a(fp_inf.o)
-                0x000011d2                __fp_inf
+                0x000011b0        0xc d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libm.a(fp_inf.o)
+                0x000011b0                __fp_inf
  .text.avr-libc.fplib
-                0x000011de        0x6 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libm.a(fp_nan.o)
-                0x000011de                __fp_nan
+                0x000011bc        0x6 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libm.a(fp_nan.o)
+                0x000011bc                __fp_nan
  .text.avr-libc.fplib
-                0x000011e4        0xe d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libm.a(fp_pscA.o)
-                0x000011e4                __fp_pscA
+                0x000011c2        0xe d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libm.a(fp_pscA.o)
+                0x000011c2                __fp_pscA
  .text.avr-libc.fplib
-                0x000011f2        0xe d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libm.a(fp_pscB.o)
-                0x000011f2                __fp_pscB
+                0x000011d0        0xe d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libm.a(fp_pscB.o)
+                0x000011d0                __fp_pscB
  .text.avr-libc.fplib
-                0x00001200       0x22 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libm.a(fp_round.o)
-                0x00001200                __fp_round
+                0x000011de       0x22 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libm.a(fp_round.o)
+                0x000011de                __fp_round
  .text.avr-libc.fplib
-                0x00001222       0x44 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libm.a(fp_split3.o)
-                0x00001222                __fp_split3
-                0x00001232                __fp_splitA
+                0x00001200       0x44 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libm.a(fp_split3.o)
+                0x00001200                __fp_split3
+                0x00001210                __fp_splitA
  .text.avr-libc.fplib
-                0x00001266        0xe d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libm.a(fp_zero.o)
-                0x00001266                __fp_zero
-                0x00001268                __fp_szero
+                0x00001244        0xe d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libm.a(fp_zero.o)
+                0x00001244                __fp_zero
+                0x00001246                __fp_szero
  .text.avr-libc.fplib
-                0x00001274        0x4 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libm.a(mulsf3.o)
-                0x00001274                __mulsf3
+                0x00001252        0x4 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libm.a(mulsf3.o)
+                0x00001252                __mulsf3
  .text.avr-libc.fplib
-                0x00001278       0xc2 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libm.a(mulsf3x.o)
-                0x0000128c                __mulsf3x
-                0x00001290                __mulsf3_pse
- .text.libgcc   0x0000133a       0x28 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_udivmodhi4.o)
-                0x0000133a                __udivmodhi4
- .text.libgcc   0x00001362        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_exit.o)
- .text.libgcc   0x00001362        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_copy_data.o)
- .text.libgcc   0x00001362        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_clear_bss.o)
+                0x00001256       0xc2 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libm.a(mulsf3x.o)
+                0x0000126a                __mulsf3x
+                0x0000126e                __mulsf3_pse
+ .text.libgcc   0x00001318       0x28 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_udivmodhi4.o)
+                0x00001318                __udivmodhi4
+ .text.libgcc   0x00001340        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_exit.o)
+ .text.libgcc   0x00001340        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_copy_data.o)
+ .text.libgcc   0x00001340        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_clear_bss.o)
  .text.avr-libc
-                0x00001362       0x3c d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(atoi.o)
-                0x00001362                atoi
+                0x00001340       0x3c d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(atoi.o)
+                0x00001340                atoi
  .text.avr-libc
-                0x0000139e       0x12 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(strcmp.o)
-                0x0000139e                strcmp
+                0x0000137c       0x12 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(strcmp.o)
+                0x0000137c                strcmp
  .text.avr-libc
-                0x000013b0       0x10 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(mul10.o)
-                0x000013b0                __mulhi_const_10
+                0x0000138e       0x10 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(mul10.o)
+                0x0000138e                __mulhi_const_10
  .text.avr-libc
-                0x000013c0       0x2a d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(printf.o)
-                0x000013c0                printf
+                0x0000139e       0x2a d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(printf.o)
+                0x0000139e                printf
  .text.avr-libc
-                0x000013ea        0xe d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(putchar.o)
-                0x000013ea                putchar
+                0x000013c8        0xe d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(putchar.o)
+                0x000013c8                putchar
  .text.avr-libc
-                0x000013f8       0x44 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(sprintf.o)
-                0x000013f8                sprintf
+                0x000013d6       0x44 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(sprintf.o)
+                0x000013d6                sprintf
  .text.avr-libc
-                0x0000143c      0x3bc d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(vfprintf_std.o)
-                0x0000143c                vfprintf
+                0x0000141a      0x3bc d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(vfprintf_std.o)
+                0x0000141a                vfprintf
  .text.avr-libc
-                0x000017f8       0x10 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(eerd_byte_atmega328p.o)
-                0x000017f8                __eerd_byte_m328p
+                0x000017d6       0x10 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(eerd_byte_atmega328p.o)
+                0x000017d6                __eerd_byte_m328p
  .text.avr-libc
-                0x00001808       0x24 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(eeupd_byte_atmega328p.o)
-                0x00001808                __eeupd_byte_m328p
-                0x0000180a                __eeupd_r18_m328p
+                0x000017e6       0x24 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(eeupd_byte_atmega328p.o)
+                0x000017e6                __eeupd_byte_m328p
+                0x000017e8                __eeupd_r18_m328p
  .text.avr-libc
-                0x0000182c       0x16 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(strnlen_P.o)
-                0x0000182c                strnlen_P
+                0x0000180a       0x16 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(strnlen_P.o)
+                0x0000180a                strnlen_P
  .text.avr-libc
-                0x00001842       0x16 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(strnlen.o)
-                0x00001842                strnlen
+                0x00001820       0x16 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(strnlen.o)
+                0x00001820                strnlen
  .text.avr-libc
-                0x00001858       0x58 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(fputc.o)
-                0x00001858                fputc
+                0x00001836       0x58 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(fputc.o)
+                0x00001836                fputc
  .text.avr-libc
-                0x000018b0       0xbc d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(ultoa_invert.o)
-                0x000018b0                __ultoa_invert
- .text.libgcc   0x0000196c       0x38 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_prologue.o)
-                0x0000196c                __prologue_saves__
- .text.libgcc   0x000019a4       0x36 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_epilogue.o)
-                0x000019a4                __epilogue_restores__
-                0x000019da                . = ALIGN (0x2)
+                0x0000188e       0xbc d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(ultoa_invert.o)
+                0x0000188e                __ultoa_invert
+ .text.libgcc   0x0000194a       0x38 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_prologue.o)
+                0x0000194a                __prologue_saves__
+ .text.libgcc   0x00001982       0x36 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_epilogue.o)
+                0x00001982                __epilogue_restores__
+                0x000019b8                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x000019da        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_exit.o)
-                0x000019da                _exit
-                0x000019da                exit
+ .fini9         0x000019b8        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_exit.o)
+                0x000019b8                _exit
+                0x000019b8                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -486,11 +485,11 @@ LOAD d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrto
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x000019da        0x4 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_exit.o)
+ .fini0         0x000019b8        0x4 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_exit.o)
  *(.fini0)
-                0x000019de                _etext = .
+                0x000019bc                _etext = .
 
-.data           0x00800100      0x306 load address 0x000019de
+.data           0x00800100      0x308 load address 0x000019bc
                 0x00800100                PROVIDE (__data_start, .)
  *(.data)
  .data          0x00800100        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5/crtm328p.o
@@ -499,62 +498,62 @@ LOAD d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrto
                 0x00800100                strobe
                 0x00800101                clock
                 0x00800102                data
- .data          0x00800103        0x1 Leds.o
+ .data          0x00800103        0x3 Leds.o
                 0x00800103                ths_dist_min
- .data          0x00800104        0x0 Lightsensor.o
- .data          0x00800104      0x2f7 protocolhandeler.o
- .data          0x008003fb        0x0 serial.o
- .data          0x008003fb        0xa Temperaturesensor.o
- .data          0x00800405        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libm.a(addsf3.o)
- .data          0x00800405        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libm.a(addsf3x.o)
- .data          0x00800405        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libm.a(fixsfsi.o)
- .data          0x00800405        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libm.a(fixunssfsi.o)
- .data          0x00800405        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libm.a(floatsisf.o)
- .data          0x00800405        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libm.a(fp_inf.o)
- .data          0x00800405        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libm.a(fp_nan.o)
- .data          0x00800405        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libm.a(fp_pscA.o)
- .data          0x00800405        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libm.a(fp_pscB.o)
- .data          0x00800405        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libm.a(fp_round.o)
- .data          0x00800405        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libm.a(fp_split3.o)
- .data          0x00800405        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libm.a(fp_zero.o)
- .data          0x00800405        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libm.a(mulsf3.o)
- .data          0x00800405        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libm.a(mulsf3x.o)
- .data          0x00800405        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_udivmodhi4.o)
- .data          0x00800405        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_exit.o)
- .data          0x00800405        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_copy_data.o)
- .data          0x00800405        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_clear_bss.o)
- .data          0x00800405        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(atoi.o)
- .data          0x00800405        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(strcmp.o)
- .data          0x00800405        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(mul10.o)
- .data          0x00800405        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(printf.o)
- .data          0x00800405        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(putchar.o)
- .data          0x00800405        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(sprintf.o)
- .data          0x00800405        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(vfprintf_std.o)
- .data          0x00800405        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(eerd_byte_atmega328p.o)
- .data          0x00800405        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(eeupd_byte_atmega328p.o)
- .data          0x00800405        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(strnlen_P.o)
- .data          0x00800405        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(strnlen.o)
- .data          0x00800405        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(fputc.o)
- .data          0x00800405        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(iob.o)
- .data          0x00800405        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(ultoa_invert.o)
- .data          0x00800405        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_prologue.o)
- .data          0x00800405        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_epilogue.o)
+ .data          0x00800106        0x0 Lightsensor.o
+ .data          0x00800106      0x2f7 protocolhandeler.o
+ .data          0x008003fd        0x0 serial.o
+ .data          0x008003fd        0xa Temperaturesensor.o
+ .data          0x00800407        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libm.a(addsf3.o)
+ .data          0x00800407        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libm.a(addsf3x.o)
+ .data          0x00800407        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libm.a(fixsfsi.o)
+ .data          0x00800407        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libm.a(fixunssfsi.o)
+ .data          0x00800407        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libm.a(floatsisf.o)
+ .data          0x00800407        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libm.a(fp_inf.o)
+ .data          0x00800407        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libm.a(fp_nan.o)
+ .data          0x00800407        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libm.a(fp_pscA.o)
+ .data          0x00800407        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libm.a(fp_pscB.o)
+ .data          0x00800407        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libm.a(fp_round.o)
+ .data          0x00800407        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libm.a(fp_split3.o)
+ .data          0x00800407        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libm.a(fp_zero.o)
+ .data          0x00800407        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libm.a(mulsf3.o)
+ .data          0x00800407        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libm.a(mulsf3x.o)
+ .data          0x00800407        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_udivmodhi4.o)
+ .data          0x00800407        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_exit.o)
+ .data          0x00800407        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_copy_data.o)
+ .data          0x00800407        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_clear_bss.o)
+ .data          0x00800407        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(atoi.o)
+ .data          0x00800407        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(strcmp.o)
+ .data          0x00800407        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(mul10.o)
+ .data          0x00800407        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(printf.o)
+ .data          0x00800407        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(putchar.o)
+ .data          0x00800407        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(sprintf.o)
+ .data          0x00800407        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(vfprintf_std.o)
+ .data          0x00800407        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(eerd_byte_atmega328p.o)
+ .data          0x00800407        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(eeupd_byte_atmega328p.o)
+ .data          0x00800407        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(strnlen_P.o)
+ .data          0x00800407        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(strnlen.o)
+ .data          0x00800407        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(fputc.o)
+ .data          0x00800407        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(iob.o)
+ .data          0x00800407        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(ultoa_invert.o)
+ .data          0x00800407        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_prologue.o)
+ .data          0x00800407        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_epilogue.o)
  *(.data*)
  *(.rodata)
  *(.rodata*)
  *(.gnu.linkonce.d*)
-                0x00800406                . = ALIGN (0x2)
- *fill*         0x00800405        0x1 00
-                0x00800406                _edata = .
-                0x00800406                PROVIDE (__data_end, .)
+                0x00800408                . = ALIGN (0x2)
+ *fill*         0x00800407        0x1 00
+                0x00800408                _edata = .
+                0x00800408                PROVIDE (__data_end, .)
 
-.bss            0x00800406       0x13
-                0x00800406                PROVIDE (__bss_start, .)
+.bss            0x00800408       0x11
+                0x00800408                PROVIDE (__bss_start, .)
  *(.bss)
- .bss           0x00800406        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5/crtm328p.o
- .bss           0x00800406        0x0 Control_Unit.o
- .bss           0x00800406        0x0 Distancesensor.o
- .bss           0x00800406        0x2 Leds.o
+ .bss           0x00800408        0x0 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5/crtm328p.o
+ .bss           0x00800408        0x0 Control_Unit.o
+ .bss           0x00800408        0x0 Distancesensor.o
+ .bss           0x00800408        0x0 Leds.o
  .bss           0x00800408        0x0 Lightsensor.o
  .bss           0x00800408        0x0 protocolhandeler.o
  .bss           0x00800408        0x0 serial.o
@@ -608,8 +607,8 @@ LOAD d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrto
  COMMON         0x00800413        0x6 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(iob.o)
                 0x00800413                __iob
                 0x00800419                PROVIDE (__bss_end, .)
-                0x000019de                __data_load_start = LOADADDR (.data)
-                0x00001ce4                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x000019bc                __data_load_start = LOADADDR (.data)
+                0x00001cc4                __data_load_end = (__data_load_start + SIZEOF (.data))
 
 .noinit         0x00800419        0x0
                 0x00800419                PROVIDE (__noinit_start, .)
@@ -755,36 +754,36 @@ LOAD d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrto
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x1e9f
+.debug_info     0x00000000     0x21ae
  *(.debug_info)
  .debug_info    0x00000000      0x172 Control_Unit.o
  .debug_info    0x00000172      0x278 Distancesensor.o
- .debug_info    0x000003ea      0x385 Leds.o
- .debug_info    0x0000076f       0xd7 Lightsensor.o
- .debug_info    0x00000846      0x3d4 protocolhandeler.o
- .debug_info    0x00000c1a      0x160 serial.o
- .debug_info    0x00000d7a       0xff Temperaturesensor.o
- .debug_info    0x00000e79       0xdd d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_udivmodhi4.o)
- .debug_info    0x00000f56       0xdd d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_exit.o)
- .debug_info    0x00001033       0xdd d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_copy_data.o)
- .debug_info    0x00001110       0xdd d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_clear_bss.o)
- .debug_info    0x000011ed      0x1c6 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(printf.o)
- .debug_info    0x000013b3      0x183 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(putchar.o)
- .debug_info    0x00001536      0x1b7 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(sprintf.o)
- .debug_info    0x000016ed      0x342 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(vfprintf_std.o)
- .debug_info    0x00001a2f      0x167 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(fputc.o)
- .debug_info    0x00001b96      0x14f d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(iob.o)
- .debug_info    0x00001ce5       0xdd d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_prologue.o)
- .debug_info    0x00001dc2       0xdd d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_epilogue.o)
+ .debug_info    0x000003ea      0x337 Leds.o
+ .debug_info    0x00000721       0xd7 Lightsensor.o
+ .debug_info    0x000007f8      0x731 protocolhandeler.o
+ .debug_info    0x00000f29      0x160 serial.o
+ .debug_info    0x00001089       0xff Temperaturesensor.o
+ .debug_info    0x00001188       0xdd d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_udivmodhi4.o)
+ .debug_info    0x00001265       0xdd d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_exit.o)
+ .debug_info    0x00001342       0xdd d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_copy_data.o)
+ .debug_info    0x0000141f       0xdd d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_clear_bss.o)
+ .debug_info    0x000014fc      0x1c6 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(printf.o)
+ .debug_info    0x000016c2      0x183 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(putchar.o)
+ .debug_info    0x00001845      0x1b7 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(sprintf.o)
+ .debug_info    0x000019fc      0x342 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(vfprintf_std.o)
+ .debug_info    0x00001d3e      0x167 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(fputc.o)
+ .debug_info    0x00001ea5      0x14f d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(iob.o)
+ .debug_info    0x00001ff4       0xdd d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_prologue.o)
+ .debug_info    0x000020d1       0xdd d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_epilogue.o)
  *(.gnu.linkonce.wi.*)
 
 .debug_abbrev   0x00000000      0xd7e
  *(.debug_abbrev)
  .debug_abbrev  0x00000000       0xfd Control_Unit.o
  .debug_abbrev  0x000000fd      0x16d Distancesensor.o
- .debug_abbrev  0x0000026a      0x112 Leds.o
- .debug_abbrev  0x0000037c       0x83 Lightsensor.o
- .debug_abbrev  0x000003ff      0x173 protocolhandeler.o
+ .debug_abbrev  0x0000026a       0xff Leds.o
+ .debug_abbrev  0x00000369       0x83 Lightsensor.o
+ .debug_abbrev  0x000003ec      0x186 protocolhandeler.o
  .debug_abbrev  0x00000572       0xff serial.o
  .debug_abbrev  0x00000671       0x92 Temperaturesensor.o
  .debug_abbrev  0x00000703       0x14 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_udivmodhi4.o)
@@ -800,70 +799,70 @@ LOAD d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrto
  .debug_abbrev  0x00000d56       0x14 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_prologue.o)
  .debug_abbrev  0x00000d6a       0x14 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_epilogue.o)
 
-.debug_line     0x00000000     0x1436
+.debug_line     0x00000000     0x1446
  *(.debug_line)
- .debug_line    0x00000000      0x18d Control_Unit.o
- .debug_line    0x0000018d      0x1aa Distancesensor.o
- .debug_line    0x00000337       0xf4 Leds.o
+ .debug_line    0x00000000      0x188 Control_Unit.o
+ .debug_line    0x00000188      0x1ab Distancesensor.o
+ .debug_line    0x00000333       0xf8 Leds.o
  .debug_line    0x0000042b       0xdd Lightsensor.o
- .debug_line    0x00000508      0x20e protocolhandeler.o
- .debug_line    0x00000716       0xf8 serial.o
- .debug_line    0x0000080e       0xe8 Temperaturesensor.o
- .debug_line    0x000008f6       0x9a d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_udivmodhi4.o)
- .debug_line    0x00000990       0x88 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_exit.o)
- .debug_line    0x00000a18       0x91 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_copy_data.o)
- .debug_line    0x00000aa9       0x8e d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_clear_bss.o)
- .debug_line    0x00000b37      0x151 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(printf.o)
- .debug_line    0x00000c88       0xdc d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(putchar.o)
- .debug_line    0x00000d64      0x157 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(sprintf.o)
- .debug_line    0x00000ebb      0x290 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(vfprintf_std.o)
- .debug_line    0x0000114b       0xe1 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(fputc.o)
- .debug_line    0x0000122c       0xc7 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(iob.o)
- .debug_line    0x000012f3       0xa2 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_prologue.o)
- .debug_line    0x00001395       0xa1 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_epilogue.o)
+ .debug_line    0x00000508      0x21c protocolhandeler.o
+ .debug_line    0x00000724       0xfa serial.o
+ .debug_line    0x0000081e       0xe8 Temperaturesensor.o
+ .debug_line    0x00000906       0x9a d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_udivmodhi4.o)
+ .debug_line    0x000009a0       0x88 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_exit.o)
+ .debug_line    0x00000a28       0x91 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_copy_data.o)
+ .debug_line    0x00000ab9       0x8e d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_clear_bss.o)
+ .debug_line    0x00000b47      0x151 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(printf.o)
+ .debug_line    0x00000c98       0xdc d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(putchar.o)
+ .debug_line    0x00000d74      0x157 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(sprintf.o)
+ .debug_line    0x00000ecb      0x290 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(vfprintf_std.o)
+ .debug_line    0x0000115b       0xe1 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(fputc.o)
+ .debug_line    0x0000123c       0xc7 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(iob.o)
+ .debug_line    0x00001303       0xa2 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_prologue.o)
+ .debug_line    0x000013a5       0xa1 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_epilogue.o)
 
-.debug_frame    0x00000000      0x5a4
+.debug_frame    0x00000000      0x594
  *(.debug_frame)
  .debug_frame   0x00000000       0x24 Control_Unit.o
  .debug_frame   0x00000024       0xec Distancesensor.o
- .debug_frame   0x00000110       0x64 Leds.o
- .debug_frame   0x00000174       0x44 Lightsensor.o
- .debug_frame   0x000001b8      0x1f8 protocolhandeler.o
- .debug_frame   0x000003b0       0x98 serial.o
- .debug_frame   0x00000448       0x58 Temperaturesensor.o
- .debug_frame   0x000004a0       0x2c d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(printf.o)
- .debug_frame   0x000004cc       0x24 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(putchar.o)
- .debug_frame   0x000004f0       0x30 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(sprintf.o)
- .debug_frame   0x00000520       0x4c d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(vfprintf_std.o)
- .debug_frame   0x0000056c       0x38 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(fputc.o)
+ .debug_frame   0x00000110       0x54 Leds.o
+ .debug_frame   0x00000164       0x44 Lightsensor.o
+ .debug_frame   0x000001a8      0x1f8 protocolhandeler.o
+ .debug_frame   0x000003a0       0x98 serial.o
+ .debug_frame   0x00000438       0x58 Temperaturesensor.o
+ .debug_frame   0x00000490       0x2c d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(printf.o)
+ .debug_frame   0x000004bc       0x24 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(putchar.o)
+ .debug_frame   0x000004e0       0x30 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(sprintf.o)
+ .debug_frame   0x00000510       0x4c d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(vfprintf_std.o)
+ .debug_frame   0x0000055c       0x38 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(fputc.o)
 
-.debug_str      0x00000000      0x6db
+.debug_str      0x00000000      0x6ca
  *(.debug_str)
  .debug_str     0x00000000      0x11f Control_Unit.o
                                 0x158 (size before relaxing)
  .debug_str     0x0000011f       0x98 Distancesensor.o
                                 0x1ce (size before relaxing)
- .debug_str     0x000001b7      0x129 Leds.o
-                                0x24d (size before relaxing)
- .debug_str     0x000002e0       0x36 Lightsensor.o
+ .debug_str     0x000001b7      0x118 Leds.o
+                                0x23c (size before relaxing)
+ .debug_str     0x000002cf       0x36 Lightsensor.o
                                 0x124 (size before relaxing)
- .debug_str     0x00000316       0xa5 protocolhandeler.o
-                                0x258 (size before relaxing)
- .debug_str     0x000003bb       0x46 serial.o
+ .debug_str     0x00000305       0xb8 protocolhandeler.o
+                                0x26b (size before relaxing)
+ .debug_str     0x000003bd       0x33 serial.o
                                 0x124 (size before relaxing)
- .debug_str     0x00000401       0x48 Temperaturesensor.o
+ .debug_str     0x000003f0       0x48 Temperaturesensor.o
                                 0x141 (size before relaxing)
- .debug_str     0x00000449       0x96 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(printf.o)
+ .debug_str     0x00000438       0x96 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(printf.o)
                                 0x125 (size before relaxing)
- .debug_str     0x000004df       0x5a d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(putchar.o)
+ .debug_str     0x000004ce       0x5a d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(putchar.o)
                                  0xfe (size before relaxing)
- .debug_str     0x00000539       0x5a d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(sprintf.o)
+ .debug_str     0x00000528       0x5a d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(sprintf.o)
                                 0x121 (size before relaxing)
- .debug_str     0x00000593       0xa4 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(vfprintf_std.o)
+ .debug_str     0x00000582       0xa4 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(vfprintf_std.o)
                                 0x16b (size before relaxing)
- .debug_str     0x00000637       0x56 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(fputc.o)
+ .debug_str     0x00000626       0x56 d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(fputc.o)
                                  0xfb (size before relaxing)
- .debug_str     0x0000068d       0x4e d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(iob.o)
+ .debug_str     0x0000067c       0x4e d:/ict/programma/visual studio/atmel/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/../../../../avr/lib/avr5\libc.a(iob.o)
                                  0xf2 (size before relaxing)
 
 .debug_loc      0x00000000      0xbdc

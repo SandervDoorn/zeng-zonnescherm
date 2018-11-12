@@ -11,11 +11,11 @@ protocolhandeler.d protocolhandeler.o: .././protocolhandeler.c \
  d:\ict\programma\visual\ studio\atmel\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr/4.6.2/../../../../avr/include/avr/version.h \
  d:\ict\programma\visual\ studio\atmel\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr/4.6.2/../../../../avr/include/avr/fuse.h \
  d:\ict\programma\visual\ studio\atmel\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr/4.6.2/../../../../avr/include/avr/lock.h \
- .././protocolhandeler.h \
- d:\ict\programma\visual\ studio\atmel\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr/4.6.2/../../../../avr/include/avr/eeprom.h \
- d:\ict\programma\visual\ studio\atmel\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr/4.6.2/include/stddef.h \
  d:\ict\programma\visual\ studio\atmel\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr/4.6.2/../../../../avr/include/stdio.h \
  d:\ict\programma\visual\ studio\atmel\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr/4.6.2/include/stdarg.h \
+ d:\ict\programma\visual\ studio\atmel\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr/4.6.2/include/stddef.h \
+ .././protocolhandeler.h \
+ d:\ict\programma\visual\ studio\atmel\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr/4.6.2/../../../../avr/include/avr/eeprom.h \
  d:\ict\programma\visual\ studio\atmel\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr/4.6.2/../../../../avr/include/stdlib.h \
  d:\ict\programma\visual\ studio\atmel\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr/4.6.2/include-fixed/limits.h \
  d:\ict\programma\visual\ studio\atmel\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr/4.6.2/../../../../avr/include/string.h
@@ -44,15 +44,15 @@ d:\ict\programma\visual\ studio\atmel\extensions\atmel\avrgcc\3.4.1.95\avrtoolch
 
 d:\ict\programma\visual\ studio\atmel\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr/4.6.2/../../../../avr/include/avr/lock.h:
 
-.././protocolhandeler.h:
-
-d:\ict\programma\visual\ studio\atmel\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr/4.6.2/../../../../avr/include/avr/eeprom.h:
-
-d:\ict\programma\visual\ studio\atmel\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr/4.6.2/include/stddef.h:
-
 d:\ict\programma\visual\ studio\atmel\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr/4.6.2/../../../../avr/include/stdio.h:
 
 d:\ict\programma\visual\ studio\atmel\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr/4.6.2/include/stdarg.h:
+
+d:\ict\programma\visual\ studio\atmel\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr/4.6.2/include/stddef.h:
+
+.././protocolhandeler.h:
+
+d:\ict\programma\visual\ studio\atmel\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr/4.6.2/../../../../avr/include/avr/eeprom.h:
 
 d:\ict\programma\visual\ studio\atmel\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr/4.6.2/../../../../avr/include/stdlib.h:
 

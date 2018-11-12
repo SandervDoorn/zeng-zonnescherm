@@ -2,18 +2,19 @@
 #include "Lightsensor.h"
 #include "Distancesensor.h"
 #include "Leds.h"
+#include "serial.h"
 #include "protocolhandeler.h"
 
 int main (void)
 {
 	init_dist();
-	init_serial();
 	init_shutter();
+	init_serial();
 	
 	while(1)
 	{
-		read_command();
 		init_leds();
+		/*read_command();*/
 		_delay_ms(1000);
 	}
 	return 0;

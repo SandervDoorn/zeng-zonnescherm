@@ -20,7 +20,7 @@ Control_Unit.d Control_Unit.o: .././Control_Unit.c \
  d:\ict\programma\visual\ studio\atmel\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr/4.6.2/../../../../avr/include/util/delay_basic.h \
  .././Lightsensor.h .././Distancesensor.h \
  d:\ict\programma\visual\ studio\atmel\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr/4.6.2/../../../../avr/include/avr/interrupt.h \
- .././Leds.h .././protocolhandeler.h \
+ .././Leds.h .././serial.h .././protocolhandeler.h \
  d:\ict\programma\visual\ studio\atmel\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr/4.6.2/../../../../avr/include/avr/eeprom.h \
  d:\ict\programma\visual\ studio\atmel\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr/4.6.2/include-fixed/limits.h \
  d:\ict\programma\visual\ studio\atmel\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr/4.6.2/../../../../avr/include/string.h
@@ -70,6 +70,8 @@ d:\ict\programma\visual\ studio\atmel\extensions\atmel\avrgcc\3.4.1.95\avrtoolch
 d:\ict\programma\visual\ studio\atmel\extensions\atmel\avrgcc\3.4.1.95\avrtoolchain\bin\../lib/gcc/avr/4.6.2/../../../../avr/include/avr/interrupt.h:
 
 .././Leds.h:
+
+.././serial.h:
 
 .././protocolhandeler.h:
 

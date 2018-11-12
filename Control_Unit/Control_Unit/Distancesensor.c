@@ -6,7 +6,8 @@ const uint8_t strobe = 2;
 
 void init_ports(void)
 {
-	
+	//Set PORTB on output for display
+	DDRB = 0xff;
 	//Set PD2 (Trigger) to output and PD3 (Echo) to input
 	DDRD = 0b00000100;
 }
@@ -58,7 +59,6 @@ int read_sensor_dist(void)
 	sendPulse();
 	stop_timer();
 	uint16_t dist = calc_cm(gv_counter);
-	
 	return dist;
 }
 
