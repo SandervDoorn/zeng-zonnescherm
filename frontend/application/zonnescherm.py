@@ -47,8 +47,13 @@ class Zonnescherm:
         response = self.connection.readline()
 
         # Return the response given by Arduino
-        print("Receiving response: " + response.decode())
-        return response.decode()
+        try:
+            decoded = response.decode()
+        except UnicodeDecodeError:
+            print("UnicodeDecodeError found")
+            decoded = ""
+        print("Receiving response: " + decoded)
+        return decoded
 
     def parse(self, response):
         res = response.split(" ")
