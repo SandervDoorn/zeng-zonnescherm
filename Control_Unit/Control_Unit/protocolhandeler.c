@@ -166,7 +166,7 @@ void read_command()
 	}
 
 	//If tree to handle all GETTERS
-	if (strcmp(commando, "get_adruino_name") == 0)
+	if (strcmp(commando, "GET_NAME") == 0)
 	{
 		if (get_arduino_name() !=NULL)
 		{
@@ -181,7 +181,7 @@ void read_command()
 
 	if (strcmp(commando, "GET_STATE") == 0)
 	{
-		if (get_shutter_state() == OPEN || get_shutter_state == CLOSED)
+		if (get_shutter_state() == OPEN || get_shutter_state() == CLOSED)
 		{
 			sprintf(response, "OK %i", get_shutter_state());
 			write_ser(response);

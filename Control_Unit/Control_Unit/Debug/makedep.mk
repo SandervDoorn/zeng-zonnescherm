@@ -12,6 +12,8 @@ Lightsensor.c
 
 protocolhandeler.c
 
+scheduler.c
+
 serial.c
 
 Temperaturesensor.c

@@ -16,12 +16,12 @@ class Zonnescherm:
 
     def set_defaults(self):
         # Default settings
-        response = self.send("GET_SETTINGS").split(" ")
-        self.name = response[0]
-        self.mode = response[1]
-        self.state = response[2]
-        self.ths_temp = response[3]
-        self.ths_dist = response[4]
+        # response = self.send("GET_SETTINGS")
+        self.name = self.send("GET_NAME")
+        self.mode = self.send("GET_MODE")
+        self.state = self.send("GET_STATE")
+        self.ths_temp = self.send("GET_THS_TEMP")
+        self.ths_dist = self.send("GET_THS_DIST")
 
     def get_port(self):
         return self.port
@@ -75,7 +75,7 @@ class Zonnescherm:
     def set_mode(self, value):
         self.send("SET_MODE " + str(value))
         response = self.send("GET_MODE")
-        self.mode = self.parse(response)[0]
+        self.mode = self.parse(response)
 
     def get_state(self):
         return self.state
@@ -83,7 +83,7 @@ class Zonnescherm:
     def set_state(self, value):
         self.send("SET_STATE " + str(value))
         response = self.send("GET_STATE")
-        self.state = self.parse(response)[0]
+        self.state = self.parse(response)
 
     def get_temp(self):
         response = self.send("GET_SENSOR_TEMP")

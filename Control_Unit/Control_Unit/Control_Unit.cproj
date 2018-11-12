@@ -94,6 +94,12 @@
     <Compile Include="protocolhandeler.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="scheduler.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="scheduler.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="serial.c">
       <SubType>compile</SubType>
     </Compile>

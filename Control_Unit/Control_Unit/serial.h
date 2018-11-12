@@ -11,6 +11,7 @@
 #define UBBRVAL = 103 //16.000.000(clockspeed)/16/9600(wanted baudrate)-1
 #include <avr/io.h>
 #include <stdio.h>
+#include <util/delay.h>
 
 // void init_serial();
 // 

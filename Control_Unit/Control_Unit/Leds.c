@@ -1,4 +1,8 @@
 #include "Leds.h"
+#include "protocolhandeler.h"
+#include "Lightsensor.h"
+#include "Temperaturesensor.h"
+#include "Distancesensor.h"
 
 int16_t ths_temp; //get_ths_temp()
 uint8_t ths_light; //get_ths_light
@@ -17,6 +21,7 @@ void init_shutter()
 	set_ths_temp(26);
 	set_shutter_mode(1);
 	set_shutter_state(0);
+	//set_arduino_name("Arduino");
 	uint8_t arduino_name[20] = {'A','r','d','u','i','n','o'};
 }
 

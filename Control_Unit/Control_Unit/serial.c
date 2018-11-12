@@ -43,17 +43,6 @@ void write_ser(char *data) {
 
 uint8_t receive_data() {
 	//Wacht tot er data is
-// 	int i = 0;
-// 	
-// 	while (!(UCSR0A & (1<<RXC0)) && i < 160000)
-// 	{
-// 		i++;
-// 	}
-// 	
-// 	if (i==160000)
-// 	{
-// 		return '\r';
-// 	}
 	loop_until_bit_is_set(UCSR0A, RXC0);
 	return UDR0;
 }
@@ -61,6 +50,7 @@ uint8_t receive_data() {
 //Copy from serial.c written by Simon van der Meer
 void read_ser(char* buf, int maxlength) {
 	int i=0;
+	int attempt = 0;	
 	while(1) {
 		uint8_t c = receive_data();
 		
